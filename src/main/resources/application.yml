@@ -2,9 +2,9 @@ spring:
   application:
     name: ci_cd
   datasource:
-    url: jdbc:postgresql://localhost:5432/mydb
+    url: jdbc:postgresql://localhost:5432/music_system
     username: postgres
-    password: postgres
+    password:
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
