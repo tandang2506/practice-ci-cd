@@ -22,8 +22,5 @@ jobs:
       - name: Compile
         run: mvn clean compile
 
-      - name: Generate Source
-        run: mvn clean generate-source -X
-
       - name: Build & test
         run: mvn clean test
