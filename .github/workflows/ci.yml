@@ -1,0 +1,29 @@
+name: CI First Step
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-lastest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Complie
+      - run: mvn clean compile
+
+      - name: Generate Source
+      - run: mvn clean generate-source -X
+
+      - name: Build & test
+        run: mvn clean test
